@@ -22,12 +22,16 @@ function generatePassword(){
   // get and validate the length of password 
   var numOfChars = prompt("Please specify the length of the password.\n(8-128 characters)"); 
 
-  if (isNaN(numOfChars) || numOfChars.includes(".")) {
-      alert("The Input must be an integer."); 
-      return l_password; 
-  } else if (numOfChars < 8 || numOfChars > 128) {
-      alert("The length of password must between 8 to 128 characters."); 
-      return l_password; 
+  if (numOfChars != null) {
+    if (isNaN(numOfChars) || numOfChars.includes(".")) {
+        alert("The Input must be an integer."); 
+        return l_password; 
+    } else if (numOfChars < 8 || numOfChars > 128) {
+        alert("The length of password must between 8 to 128 characters."); 
+        return l_password; 
+    }
+  } else {
+    return l_password; 
   }
 
   // get and validate the character types and store in the object array. 
@@ -65,7 +69,7 @@ function generatePassword(){
   while (!isValidPassword) {
     // generate a password using random function 
     l_password = ''; 
-    
+
     for (var j = 1; j <= numOfChars; j++) {
       l_password = l_password + validChars.charAt(Math.floor(Math.random()*validChars.length));
     }
