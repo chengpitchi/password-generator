@@ -89,19 +89,19 @@ https://chengpitchi.github.io/password-generator/
 
 ## Screenshots for the Solution
 
-![This is the first solution screenshot for Password Generator](./assets/images/password-generator-screen1.png)
+![This is the first solution screenshot for Password Generator](./Assets/images/password-generator-screen1.png)
 <br>
-![This is the second solution screenshot for Password Generator](./assets/images/password-generator-screen2.png)
+![This is the second solution screenshot for Password Generator](./Assets/images/password-generator-screen2.png)
 <br>
-![This is the third solution screenshot for Password Generator](./assets/images/password-generator-screen3.png)
+![This is the third solution screenshot for Password Generator](./Assets/images/password-generator-screen3.png)
 <br>
-![This is the fourth solution screenshot for Password Generator](./assets/images/password-generator-screen4.png)
+![This is the fourth solution screenshot for Password Generator](./Assets/images/password-generator-screen4.png)
 <br>
-![This is the fifth solution screenshot for Password Generator](./assets/images/password-generator-screen5.png)
+![This is the fifth solution screenshot for Password Generator](./Assets/images/password-generator-screen5.png)
 <br>
-![This is the sixth solution screenshot for Password Generator](./assets/images/password-generator-screen6.png)
+![This is the sixth solution screenshot for Password Generator](./Assets/images/password-generator-screen6.png)
 <br>
-![This is the seventh solution screenshot for Password Generator](./assets/images/password-generator-screen7.png)
+![This is the seventh solution screenshot for Password Generator](./Assets/images/password-generator-screen7.png)
 <br>
 
 ## Installation
