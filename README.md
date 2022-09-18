@@ -1,10 +1,8 @@
-# 03 JavaScript: Password Generator
+# Password Generator
 
 ## Your Task
 
-This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
-
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+This is the Challenge after completing the Unit 3 (JavaScript) of Adelaide University Coding Bootcamp.
 
 ## User Story
 
@@ -34,67 +32,82 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
-## Mock-Up
+## Solution
 
-The following image shows the web application's appearance and functionality:
+Steps to resolve the Challenge:
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+1. Create function generatePassword() in script.js file.  
 
-## Grading Requirements
+2. Declare variables and set the prompt screens to collect the user inputs. 
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+3. Store the user inputs to the variables. 
 
-This Challenge is graded based on the following criteria: 
+4. Valid the user inputs against the requirements.  If the user input is invalid, prompt message to notify user and quit the function by returning an empty string password to the main function.  
 
-### Technical Acceptance Criteria: 40%
+5. If the user inputs are valid, generate a password based on the selected criteria. 
 
-* Satisfies all of the preceding acceptance criteria.
+6. After generating the password, check the password whether all the required character types are included in the password.  If not, regenerate the password until all the required character types are included. 
 
-### Deployment: 32%
+7. If a valid password is gererated, return the valid password to the main function. 
 
-* Application deployed at live URL.
+<br>
 
-* Application loads with no errors.
+## Testing Strategy and Result
 
-* Application GitHub URL submitted.
+The testing will be separated into 2 parts, testing on valid criteria and exception test. 
 
-* GitHub repository that contains application code.
+### Test Cases on valid criteria: 
 
-### Application Quality: 15%
+| Test Case | Password Length | uppercase | lowercase | numbers | special characters |                                                           Password Generated                                                           | Result |
+|:---------:|:---------------:|:---------:|:---------:|:-------:|:------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|:------:|
+|     1     |        8        |    Yes    |    Yes    |   Yes   |         Yes        |                                                                d.9[}A!U                                                                |  Pass  |
+|     2     |        10       |     No    |    Yes    |    No   |         Yes        |                                                               [\|k..o<+j,                                                              |  Pass  |
+|     3     |       128       |    Yes    |     No    |   Yes   |         Yes        | J[Q.HR\`#,W&:U}\`LBL"%N!U0J?'+-. 5A*0?<15L:^@)SA\`[7P7GAP>:N&. \`Z(>\|U0:>PZ}}G+%?7-O=W0J%,"<Z \|;-T{Z?GXL@U(Y25]K%'QAY (_:DX3~~;*B$7-[!OB |  Pass  |
+|     4     |        60       |     No    |     No    |    No   |         Yes        |                                     ,<~}.,(;{.<!\`{^,[>_^-*\`$,}^)}!&. )#__`.&==[;>#.%%:^#>\|)?_(^(^                                     |  Pass  |
 
-* Application user experience is intuitive and easy to navigate.
+<br>
 
-* Application user interface style is clean and polished.
+### Exception Tests: 
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+| Test Case | Testing Criteria                                                 | Expected Behavior                                                                         | Actual Behavior | Result |
+|:---------:|------------------------------------------------------------------|-----------------------------------------------------------------------------------------|:-------------:|:------:|
+|     1     | Click Cancel when asking length of password                      | Quit function with no message.                                                          |  As expected  |  Pass  |
+|     2     | Input "abc" when asking length of password                       | Quit function with message to notify user an integer input is needed                    |  As expected  |  Pass  |
+|     3     | Input "10.5" when asking length of password                      | Quit function with message to notify user an integer input is needed                    |  As expected  |  Pass  |
+|     4     | Input nothing when asking length of password                     | Quit function with message to notify user the value must be between 8 and 128           |  As expected  |  Pass  |
+|     5     | Input 2 when asking length of password                           | Quit function with message to notify  user the value must be between 8 and 128          |  As expected  |  Pass  |
+|     6     | Input 129 when asking length of password                         | Quit function with message to notify user the value must be between 8 and 128           |  As expected  |  Pass  |
+|     7     | Click Cancel to all of the prompts on  selecting character types | Quit function with message to notify  user at least one character type must be selected |  As expected  |  Pass  |
 
-### Repository Quality: 13%
+<br>
 
-* Repository has a unique name.
+## Live URL 
 
-* Repository follows best practices for file structure and naming conventions.
+https://chengpitchi.github.io/password-generator/
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+<br>
 
-* Repository contains multiple descriptive commit messages.
+## Screenshots for the Solution
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
+![This is the first solution screenshot for Password Generator](./assets/images/password-generator-screen1.png)
+<br>
+![This is the second solution screenshot for Password Generator](./assets/images/password-generator-screen2.png)
+<br>
+![This is the third solution screenshot for Password Generator](./assets/images/password-generator-screen3.png)
+<br>
+![This is the fourth solution screenshot for Password Generator](./assets/images/password-generator-screen4.png)
+<br>
+![This is the fifth solution screenshot for Password Generator](./assets/images/password-generator-screen5.png)
+<br>
+![This is the sixth solution screenshot for Password Generator](./assets/images/password-generator-screen6.png)
+<br>
+![This is the seventh solution screenshot for Password Generator](./assets/images/password-generator-screen7.png)
+<br>
 
-## Review
+## Installation
 
-You are required to submit the following for review:
+No Installation requried.
 
-* The URL of the deployed application.
+## License 
 
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Not Applicable

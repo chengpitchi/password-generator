@@ -27,7 +27,7 @@ function generatePassword(){
         alert("The Input must be an integer."); 
         return l_password; 
     } else if (numOfChars < 8 || numOfChars > 128) {
-        alert("The length of password must between 8 to 128 characters."); 
+        alert("The length of password must be between 8 to 128 characters."); 
         return l_password; 
     }
   } else {
@@ -36,20 +36,20 @@ function generatePassword(){
 
   // get and validate the character types and store in the object array. 
   var charTypes = [
-    {isIncluded: confirm("Does the password include uppercase characters?"),
+    {isIncluded: confirm("Click OK if the password includes uppercase characters."),
      charString: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 
      // isFulfilled property is used to store the result when validating the generated password
      isFulfilled: false  
     },
-    {isIncluded: confirm("Does the password include lowercase characters?"),
+    {isIncluded: confirm("Click OK if the password includes lowercase characters."),
      charString: "abcdefghijklmnopqrstuvwxyz", 
      isFulfilled: false
     }, 
-    {isIncluded: confirm("Does the password include numbers?"),
+    {isIncluded: confirm("Click OK if the password include numbers."),
      charString: "1234567890",
      isFulfilled: false
     }, 
-    {isIncluded: confirm("Does the password include special characters?\nSpecial characters include \"!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"."),
+    {isIncluded: confirm("Click OK if the password includes special characters.\nSpecial characters include \"!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"."),
      charString: "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~", 
      isFulfilled: false
     }
@@ -67,14 +67,14 @@ function generatePassword(){
   }; 
 
   while (!isValidPassword) {
-    // generate a password using random function 
+    // generate a password based on the criteria using random function 
     l_password = ''; 
 
     for (var j = 1; j <= numOfChars; j++) {
       l_password = l_password + validChars.charAt(Math.floor(Math.random()*validChars.length));
     }
 
-    // check whether the generated password incuded all the required character type
+    // check whether the generated password incudes all the required character types
     for (var i = 0; i < charTypes.length; i++){
       if (charTypes[i].isIncluded) {
         charTypes[i].isFulfilled = false; 
@@ -89,9 +89,9 @@ function generatePassword(){
       }
     }; 
 
-    /* if the generated password cannot fulfill all the requirements, 
+    /* if the generated password cannot fulfill all the required character types, 
     set isValidPassword to false to let the program to generate a password again 
-    until all the requirements can be fulfilled.*/
+    until all the character types can be fulfilled.*/
     isValidPassword = charTypes[0].isFulfilled && charTypes[1].isFulfilled && 
                       charTypes[2].isFulfilled && charTypes[3].isFulfilled;
   }
